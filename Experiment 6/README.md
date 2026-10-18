@@ -44,23 +44,41 @@ sudo apt install zaproxy -y
 zaproxy
 ```
 
-The captures show the ZAP launch and the initial ZAP workspace. [Launch](113610.png) · [Welcome screen](113755.png) · [Workspace](114038.png)
+The captures show the ZAP launch and the initial ZAP workspace.
+
+![ZAP launch](113610.png)
+
+![ZAP welcome screen](113755.png)
+
+![ZAP workspace](114038.png)
 
 ### 3.4 Explore the authenticated application
 
-DVWA requires a login, so I used ZAP's browser/manual exploration workflow to sign in and visit application pages. This helps ZAP record requests made after authentication, rather than limiting discovery to the login page. The ZAP Sites tree capture shows DVWA paths and requests, including login, security, and vulnerability-related endpoints. [Discovered site tree](114045.png)
+DVWA requires a login, so ZAP's browser/manual exploration workflow was used to sign in and visit application pages. This helps ZAP record requests made after authentication, rather than limiting discovery to the login page. The Sites tree shows DVWA paths and requests, including login, security, and vulnerability-related endpoints.
+
+![Discovered DVWA site tree](114045.png)
 
 ### 3.5 Crawl with Spider
 
-I set the DVWA address as the Spider starting point and left recursive crawling enabled to discover linked paths. ZAP's passive scanner can analyze traffic observed during crawling and browsing. [Spider configuration](114434.png)
+The DVWA address was set as the Spider starting point with recursive crawling enabled to discover linked paths. ZAP's passive scanner can analyze traffic observed during crawling and browsing.
+
+![Spider configuration](114434.png)
 
 ### 3.6 Run an Active Scan
 
-I configured an Active Scan for `http://192.168.1.100/dvwa` with the Default Policy and recursive scope, then ran it against the lab target. An active scan sends test requests, so it should only be used on systems where scanning is authorized. [Active Scan configuration](114454.png)
+An Active Scan was configured for `http://192.168.1.100/dvwa` with the Default Policy and recursive scope, then run against the lab target. An active scan sends test requests, so it should only be used on systems where scanning is authorized.
+
+![Active Scan configuration](114454.png)
 
 ### 3.7 Review alerts and export the report
 
-After scanning, I reviewed the ZAP Alerts panel and generated an HTML report using **Report → Generate Report**. The screenshots show the alert list and report overview. [Alerts](120626.png) · [Report risk/confidence summary](121001.png) · [Report cover and contents](121020.png)
+After scanning, the ZAP Alerts panel was reviewed and an HTML report was generated using **Report → Generate Report**. The screenshots show the alert list and report overview.
+
+![ZAP alerts](120626.png)
+
+![Report risk and confidence summary](121001.png)
+
+![Report cover and contents](121020.png)
 
 ## 4. Results
 

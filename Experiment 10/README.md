@@ -25,11 +25,11 @@ The workflow consisted of configuring the SMTP sending profile, preparing an awa
 
 Mailpit was installed on Kali Linux using its installation script. The terminal output confirmed that Mailpit was installed. Its web interface was then opened locally at `http://localhost:8025`.
 
-![Mailpit installation output](screenshots/01-mailpit-installation.png)
+![Mailpit installation output](01-mailpit-installation.png)
 
 *Figure 1: Mailpit installation completed successfully on Kali Linux.*
 
-![Mailpit inbox](screenshots/02-mailpit-inbox.png)
+![Mailpit inbox](02-mailpit-inbox.png)
 
 *Figure 2: Mailpit web interface opened locally before receiving the campaign message.*
 
@@ -37,25 +37,25 @@ Mailpit was installed on Kali Linux using its installation script. The terminal 
 
 A new sending profile named **Mailpit** was created in Gophish. The interface type was set to SMTP and the local Mailpit SMTP endpoint was configured as `127.0.0.1:1025`. The sender identity used for the test was `training@lab.local`.
 
-![Sending profile configuration](screenshots/03-sending-profile-configuration.png)
+![Sending profile configuration](03-sending-profile-configuration.png)
 
 *Figure 3: SMTP sending profile configured to use the local Mailpit service.*
 
 The first test attempt returned an invalid FROM parameter error. The sender details were corrected and the test was sent again.
 
-![Initial SMTP test error](screenshots/04-initial-smtp-test-error.png)
+![Initial SMTP test error](04-initial-smtp-test-error.png)
 
 *Figure 4: Initial test-email attempt showing the invalid FROM parameter response.*
 
 The corrected test email appeared in Mailpit, confirming that Gophish could submit a message to the local SMTP service.
 
-![Successful sending profile test](screenshots/05-successful-sending-profile-test.png)
+![Successful sending profile test](05-successful-sending-profile-test.png)
 
 *Figure 5: Test message received in Mailpit after correcting the sender details.*
 
 The sending profile was then saved successfully.
 
-![Saved sending profile](screenshots/06-sending-profile-saved.png)
+![Saved sending profile](06-sending-profile-saved.png)
 
 *Figure 6: Mailpit listed as a saved Gophish sending profile.*
 
@@ -65,11 +65,11 @@ An email template named **IT Security Awareness** was created. Its subject was *
 
 The message identified the exercise as a simulation and advised the recipient not to enter real passwords or sensitive information on unverified pages. The tracking image option was left disabled.
 
-![Email template editor](screenshots/07-email-template-editor.png)
+![Email template editor](07-email-template-editor.png)
 
 *Figure 7: HTML email template prepared in Gophish.*
 
-![Saved email template](screenshots/08-email-template-saved.png)
+![Saved email template](08-email-template-saved.png)
 
 *Figure 8: Email template saved and visible in the Gophish template list.*
 
@@ -79,11 +79,11 @@ A landing page named **Security Awareness Training** was created. It displayed a
 
 The option to capture submitted data was left disabled. The page did not request credentials.
 
-![Landing page editor](screenshots/09-landing-page-editor.png)
+![Landing page editor](09-landing-page-editor.png)
 
 *Figure 9: Training landing page configured in Gophish with data capture disabled.*
 
-![Saved landing page](screenshots/10-landing-page-saved.png)
+![Saved landing page](10-landing-page-saved.png)
 
 *Figure 10: Security Awareness Training page saved successfully.*
 
@@ -95,11 +95,11 @@ A group named **Lab Test Group** was created with one test recipient:
 |---|---|---|---|
 | Student | Test | `student@lab.local` | Cybersecurity Student |
 
-![Recipient group editor](screenshots/11-recipient-group-editor.png)
+![Recipient group editor](11-recipient-group-editor.png)
 
 *Figure 11: Test recipient details entered in the Lab Test Group form.*
 
-![Saved recipient group](screenshots/12-recipient-group-saved.png)
+![Saved recipient group](12-recipient-group-saved.png)
 
 *Figure 12: Lab Test Group saved with one member.*
 
@@ -109,13 +109,13 @@ A campaign named **Lab Phishing Simulation** was configured using the saved emai
 
 The campaign URL was set to `http://127.0.0.1`, matching the local Gophish phishing-server listener on port 80. The Gophish administration interface used a separate port, so the campaign URL was not set to the admin dashboard address.
 
-![Campaign configuration](screenshots/13-campaign-configuration.png)
+![Campaign configuration](13-campaign-configuration.png)
 
 *Figure 13: Campaign settings reviewed before launch.*
 
 The campaign was launched. Gophish displayed the campaign results page and listed the test recipient with the status **Email Sent**.
 
-![Campaign results after launch](screenshots/14-campaign-results-after-launch.png)
+![Campaign results after launch](14-campaign-results-after-launch.png)
 
 *Figure 14: Gophish campaign results showing the email-sent event for the test recipient.*
 
@@ -123,19 +123,19 @@ The campaign was launched. Gophish displayed the campaign results page and liste
 
 The campaign email was inspected in Mailpit. The sender, recipient, subject, and HTML message were checked. The **Open Training Page** link was visible in the received email.
 
-![Campaign email in Mailpit](screenshots/15-campaign-email-in-mailpit.png)
+![Campaign email in Mailpit](15-campaign-email-in-mailpit.png)
 
 *Figure 15: Campaign email received and rendered in Mailpit.*
 
 After following the link, add the screenshot of the opened local training page here.
 
-![Training page opened from campaign link](screenshots/16-training-page-opened.png)
+![Training page opened from campaign link](16-training-page-opened.png.png)
 
 *Figure 16: Local Security Awareness Training page opened from the campaign email. Screenshot to be added.*
 
 Finally, refresh the Gophish campaign results and add the final results screenshot below. Use the counts shown in that screenshot when describing recorded events.
 
-![Refreshed campaign activity](screenshots/17-campaign-results-refreshed.png)
+![Refreshed campaign activity](17-campaign-results-refreshed.png.png)
 
 *Figure 17: Refreshed campaign activity and event counts. Screenshot to be added.*
 
